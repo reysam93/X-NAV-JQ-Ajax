@@ -11,4 +11,11 @@ $(document).ready(function(){
 			alert("Request failed: " + textStatus)
 		})
 	});
+	$("#fail").click(function(){
+		$.ajax("docsd.txt").done(function(){
+			alert("Should not enter here :/");
+		}).fail(function(jqXHR, textStatus){
+			alert("Request failed (as espected): " + textStatus);
+		});
+	});
 });
